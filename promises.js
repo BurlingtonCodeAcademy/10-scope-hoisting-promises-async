@@ -15,12 +15,15 @@ fetchSomeData(true, 2000)
     .then(function (data) {
         console.log(data)
     })
-    .then(()=> console.log("This is a second then"))
-    .then(()=> console.log("This is a third then"))
-    .then(()=> console.log("This is a fourth then"))
-    .finally(()=> console.log("We are finally done!"))
+    .then(() => console.log("This is a second then"))
+    .then(() => console.log("This is a third then"))
+    .then(() => console.log("This is a fourth then"))
+    .finally(() => console.log("We are finally done!"))
     .catch(error => console.log(error));
 
 fetchSomeData(false, 8000)
     .then(data => console.log(data))
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
+    .finally(() => console.log("Did it fail?"))
+
+
