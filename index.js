@@ -10,15 +10,17 @@ function delayedMessage(message, delay) {
 async function printMessage() {
     const messageOne = await delayedMessage("Message One", 4000);
     console.log(messageOne);
-
-    const messageThree = await delayedMessage("Message Three", 1000);
-    console.log(messageThree);
 };
 
-async function printAnotherMessage() {
-    const messageTwo = await delayedMessage("Message Two", 2000);
-    console.log(messageTwo);
+function printSomeMessage(message) {
+    console.log(message);
 }
 
-printAnotherMessage();
+async function printAnotherMessage() {
+    const message = await delayedMessage("Message Two", 1000);
+    printSomeMessage(message);
+}
+
 printMessage();
+printSomeMessage("First Message");
+printAnotherMessage();
